@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfApp_WrapPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_WrapPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="BorderBrush" Value="DarkCyan"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="2"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <WrapPanel Orientation="Horizontal" FlowDirection="LeftToRight" DockPanel.Dock="Top">
+                <Button Content="Создать"/>
+                <Button Content="Изменить"/>
+                <Button Content="Удалить"/>
+                <Button Content="Сохранить"/>
+                <Button Content="Сохранить как"/>
+                <Button Content="Открыть"/>
+                <Button Content="Выход"/>
+                <Button Content="Завершение сеанса"/>
+            </WrapPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical" DockPanel.Dock="Left" ClipToBounds="True" Margin="5,10" >
+                    <Button Content="Почта"/>
+                    <Button Content="Календарь"/>
+                    <Button Content="Задачи"/>
+                    <Button Content="Журнал"/>
+                    <Button Content="Почта"/>
+                </StackPanel>
+                <ListBox Grid.Column="1" DockPanel.Dock="Right" Margin="5,10"></ListBox>
+            </Grid>
+          
+        </DockPanel>
+        
+
+    </Grid>
+</Window>
